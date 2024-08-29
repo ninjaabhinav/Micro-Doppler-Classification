@@ -1,4 +1,5 @@
-* {
+/* body */
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -12,98 +13,86 @@ body, html {
     color: #ffffff; /* Light text */
 }
 
-/* Header */
-/* Header */
-header {
+/* Header*/
+.header {
     background-color: #1f1f1f; /* Slightly lighter dark color for header */
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Stack the logo and buttons vertically */
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-header .logo h1 {
+.header .logo h1 {
     color: #ffffff;
     font-size: 2rem; /* Larger font size for emphasis */
     font-weight: 700; /* Bold font weight */
     letter-spacing: 2px; /* Spacing between letters */
     font-family: Angeline;
+    margin-bottom: 20px; /* Space between the logo and buttons */
 }
 
-nav ul {
-    list-style: none;
+/* Button Container */
+.button-container {
     display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    position: relative; /* For positioning pseudo-elements */
-}
-
-nav ul li a {
-    color: #ffffff;
-    background-color: #333333; /* Dark gray for buttons */
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    font-weight: 600;
-    font-size: 1rem; /* Adjust font size */
-    letter-spacing: 1px; /* Spacing between letters */
-    display: inline-block; /* Inline block for padding and margin */
-}
-
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: #ff4081; /* Vibrant pink underline */
-    transition: width 0.3s, left 0.3s;
-    transform: translate(-50%, -50%);
-}
-
-nav ul li a:hover::before {
-    width: 100%;
-    left: 0;
-}
-
-nav ul li a:hover {
-    background-color: #ff4081; /* Vibrant pink for hover effect */
-    color: #ffffff;
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(255, 64, 129, 0.6); /* Pink shadow */
-}
-
-
-/* Home Section */
-.home-section {
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
-    min-height: calc(100vh - 120px);
-    position: relative;
+    gap: 10px; /* Space between buttons */
 }
 
-.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 70%;
-    height: 90%;
-    object-fit: cover; /* Ensures the video covers the entire area */
-    z-index: -1;
+/* Header Buttons */
+button {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
 }
-.background-video video {
-    width: fit-content;
-    height: fit-content;
-    object-fit: cover;
-    opacity: 0.5;
+
+button a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+    text-decoration: none;
+}
+
+button a:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    border: 0.08em solid #ff4081;
+    box-shadow: 0 0 0 0 #ff4081;
+}
+
+button a:not(hover) {
+    transition: all 1s;
+}
+
+
+/*---------------------------------- Main -------------------------------------*/
+/* Home */
+.home-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjusts height to fill the viewport */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
 }
 
 .home-content {
@@ -117,216 +106,19 @@ nav ul li a:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .home-content h1:hover {
     color: #ffffff;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
-    transform: scale(1.4); /* This increases the text size by 140% */
-    transition: transform 0.3s ease; /* Optional: adds a smooth transition */
+    transform: scale(1.4); /* Increases the text size by 140% */
+    transition: transform 0.3s ease; /* Adds a smooth transition */
 }
 
 
-/* Sections */
-/* .section {
-    padding: 100px 60px;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-/* About and Solution Sections */
-.container {
-    max-width: 800px;
-    width: 100%;
-}
-.about-section, .solution-section {
-    background-color: #1f1f1f;
-    color: #ffffff;
-} */
-.section {
-    background-color: #1f1f1f;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.section:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
-    transform: translateY(-5px);
-}
-
-.section-header {
-    background-color: #121212;
-    color: #ffffff;
-    padding: 15px 20px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.section-header:hover {
-    background-color: #e91e63;
-}
-
-.section-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-}
-.section-content:hover{
-    transform: scale(1.2);
-    background-color: #1f1f1f;
-}
-
-.section.active .section-content {
-    max-height: 500px;
-    padding: 20px;
-}
-
-.section-content p {
-    margin: 0;
-    line-height: 1.6;
-}
-
-/* Add a cool expanding line effect */
-.section-header::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background-color: #ffffff;
-    transition: width 0.3s ease;
-}
-
-.section:hover .section-header::after {
-    width: 100%;
-}
-
-/* Screenshots Section */
-.screenshots-section {
-    background-color: #1f1f1f;
-}
-
-.screenshots-section .screenshots {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.screenshots-section .screenshots img {
-    width: 30%;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s, filter 0.3s;
-}
-
-.screenshots-section .screenshots img:hover {
-    transform: scale(1.1);
-    filter: brightness(1.3);
-    box-shadow: 0 6px 12px rgba(255, 64, 129, 0.5); /* Accent shadow */
-}
-
-/* Team Section */
-.team-section {
-    background-color: #1f1f1f;
-    padding: 80px 40px;
-    color: #ffffff;
-}
-
-.team-section .team-members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-
-.team-section .member {
-    background-color: #333333;
-    padding: 20px;
-    border-radius: 10px;
-    width: calc(33.33% - 20px);
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.team-section .member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-}
-
-.team-section .member h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.team-section .member p {
-    margin-bottom: 5px;
-}
-
-.team-section .member a {
-    color: #ff4081; /* Vibrant pink */
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.team-section .member a:hover {
-    color: #e91e63; /* Slightly darker pink */
-}
-
-/* Footer */
+/*---------------------------------- Footer -----------------------------------*/
 footer {
     background-color: #1f1f1f;
     padding: 20px;
     text-align: center;
     font-size: 0.9rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav ul {
-        margin-top: 20px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .section {
-        padding: 60px 30px;
-    }
-
-    .team-section .member {
-        width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 480px) {
-    .team-section .member {
-        width: 100%;
-    }
-
-    .screenshots-section .screenshots img {
-        width: 100%;
-    }
-}
-
-/* GitHub Link */
-.github-link {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 24px;
-    color: #ffffff;
-    transition: color 0.3s ease;
-}
-
-.github-link:hover {
-    color: #4078c0; /* GitHub's brand color */
 }
