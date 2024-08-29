@@ -1,0 +1,116 @@
+/* body */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+}
+
+/* Header*/
+.header {
+    background-color: #1f1f1f; /* Slightly lighter dark color for header */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Stack the logo and buttons vertically */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .logo h1 {
+    color: #ffffff;
+    font-size: 2rem; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold font weight */
+    letter-spacing: 2px; /* Spacing between letters */
+    font-family: Angeline;
+    margin-bottom: 20px; /* Space between the logo and buttons */
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Header Buttons */
+button {
+    padding: 0.1em 0.25em;
+    width: 13em;
+    height: 4.2em;
+    background-color: #212121;
+    border: 0.08em solid #fff;
+    border-radius: 0.3em;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+button a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0.4em;
+    width: 8.25em;
+    height: 2.5em;
+    background-color: #212121;
+    border-radius: 0.2em;
+    font-size: 1.5em;
+    color: #fff;
+    border: 0.08em solid #fff;
+    box-shadow: 0 0.4em 0.1em 0.019em #fff;
+    text-decoration: none;
+}
+
+button a:hover {
+    transition: all 0.5s;
+    transform: translate(0, 0.4em);
+    box-shadow: 0 0 0 0 #fff;
+}
+
+button a:not(hover) {
+    transition: all 1s;
+}
+/*---------------------------------- Main -------------------------------------*/
+
+/* Screenshots */
+/* Screenshots Section */
+.screenshots-section {
+    background-color: #1f1f1f;
+}
+
+.screenshots-section .screenshots {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.screenshots-section .screenshots img {
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.screenshots-section .screenshots img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+    box-shadow: 0 6px 12px rgba(255, 64, 129, 0.5); /* Accent shadow */
+}
+/*---------------------------------- Footer -----------------------------------*/
+footer {
+    background-color: #1f1f1f;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
